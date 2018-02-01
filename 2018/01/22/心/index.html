@@ -104,7 +104,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -483,8 +483,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/22/怕/" rel="next" title="怕">
-                <i class="fa fa-chevron-left"></i> 怕
+              <a href="/2018/01/22/自作多情/" rel="prev" title="自作多情">
+                <i class="fa fa-chevron-left"></i> 自作多情
               </a>
             
           </div>
@@ -493,8 +493,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/22/自作多情/" rel="prev" title="自作多情">
-                自作多情 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/22/怕/" rel="next" title="怕">
+                怕 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -577,6 +577,8 @@ var jiathis_config={
 </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
     
     <div class="sidebar-inner">
 
@@ -807,8 +809,6 @@ var jiathis_config={
   
 
 
-  
-
 
 
 
@@ -847,11 +847,6 @@ var jiathis_config={
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 

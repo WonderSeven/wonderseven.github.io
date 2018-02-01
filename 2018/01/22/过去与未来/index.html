@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="时间,迷,路," />
+  <meta name="keywords" content="迷,时间,路," />
 
 
 
@@ -82,7 +82,7 @@
 
 
 <meta name="description" content="不需交代来路       因为无人会问及  不必说明去路        因为去路早已迷离">
-<meta name="keywords" content="时间,迷,路">
+<meta name="keywords" content="迷,时间,路">
 <meta property="og:type" content="article">
 <meta property="og:title" content="过去与未来">
 <meta property="og:url" content="http://yoursite.com/2018/01/22/过去与未来/index.html">
@@ -104,7 +104,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -441,9 +441,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/时间/" rel="tag"><i class="fa fa-tag"></i> 时间</a>
-          
             <a href="/tags/迷/" rel="tag"><i class="fa fa-tag"></i> 迷</a>
+          
+            <a href="/tags/时间/" rel="tag"><i class="fa fa-tag"></i> 时间</a>
           
             <a href="/tags/路/" rel="tag"><i class="fa fa-tag"></i> 路</a>
           
@@ -458,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/22/守/" rel="next" title="守">
-                <i class="fa fa-chevron-left"></i> 守
+              <a href="/2018/01/22/了/" rel="prev" title="了">
+                <i class="fa fa-chevron-left"></i> 了
               </a>
             
           </div>
@@ -468,8 +468,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/22/了/" rel="prev" title="了">
-                了 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/22/守/" rel="next" title="守">
+                守 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -552,6 +552,8 @@ var jiathis_config={
 </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
     
     <div class="sidebar-inner">
 
@@ -782,8 +784,6 @@ var jiathis_config={
   
 
 
-  
-
 
 
 
@@ -822,11 +822,6 @@ var jiathis_config={
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
