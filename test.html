@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Independent Show/Hide Content Example</title>
+  <style>
+    /* Basic styles */
+    .hidden {
+      display: none; /* Hide the content by default */
+    }
+    .content {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .toggle-text {
+      color: blue;
+      cursor: pointer; /* Pointer cursor for clickable text */
+      text-decoration: underline; /* Underline for emphasis */
+      margin-right: 10px; /* Space between texts */
+    }
+  </style>
+</head>
+<body>
+
+<h1>Independent Show/Hide Content Example</h1>
+
+<span id="showText" class="toggle-text">Show Content</span>
+<span id="hideText" class="toggle-text hidden">Hide Content</span>
+
+<div id="content" class="hidden content">
+  <p>This is the content that is shown when you click "Show Content"!</p>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the text elements and content element
+    const showText = document.getElementById('showText');
+    const hideText = document.getElementById('hideText');
+    const content = document.getElementById('content');
+
+    // Show text click event
+    showText.addEventListener('click', function() {
+      content.style.display = "block";  // Show content
+      showText.style.display = "none";   // Hide show text
+      hideText.style.display = "inline"; // Show hide text
+    });
+
+    // Hide text click event
+    hideText.addEventListener('click', function() {
+      content.style.display = "none";    // Hide content
+      hideText.style.display = "none";    // Hide hide text
+      showText.style.display = "inline";  // Show show text
+    });
+  });
+</script>
+
+</body>
+</html>
