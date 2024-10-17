@@ -1,6 +1,6 @@
 ---
 title: 尘
-date: 2024-03-22 00:01:00 +0800
+date: 2024-03-21 00:01:00 +0800
 class: "poems"  # Override the default card style
 show: true
 width: 3
