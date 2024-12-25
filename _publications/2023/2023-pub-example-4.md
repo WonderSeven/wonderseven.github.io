@@ -1,6 +1,6 @@
 ---
 title:          "Generalizing to New Dynamical Systems via Frequency Domain Adaptation"
-date:           2023-01-05 00:01:00 +0800
+date:           2023-06-05 00:01:00 +0800
 selected:       false
 pub:            "OpenReview"
 pub_date:       "2023"
