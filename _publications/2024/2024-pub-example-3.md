@@ -2,7 +2,7 @@
 title:          "Deep Signature: Characterization of Large-Scale Molecular Dynamics"
 date:           2024-05-12 00:01:00 +0800
 selected:       true
-pub:            "arXiv (Preprint)"
+pub:            "International Conference on Learning Representations (ICLR)"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
 #pub_last:       ' <span class="badge badge-pill badge-publication badge-success">Spotlight</span>'
