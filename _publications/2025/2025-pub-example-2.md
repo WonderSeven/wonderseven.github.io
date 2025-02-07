@@ -21,6 +21,6 @@ authors:
   - Haoliang Li
 links:
   Paper: https://arxiv.org/abs/2410.12191
-#  Code: https://github.com/luost26/academic-homepage
+  Code: https://tonyckc.github.io/TTA-IC-DR/
 #  Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
 ---
