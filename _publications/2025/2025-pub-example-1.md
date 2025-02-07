@@ -20,6 +20,6 @@ authors:
   - Haoliang Li
 links:
   Paper: https://arxiv.org/abs/2410.02847
-#  Code: https://github.com/luost26/academic-homepage
+  Code: https://github.com/WonderSeven/Deep-Signature
 #  Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
 ---
