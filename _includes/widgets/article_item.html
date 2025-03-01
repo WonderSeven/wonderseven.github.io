@@ -33,6 +33,28 @@
                 </div>
             </div>
 
+<!--            <script>-->
+<!--                document.addEventListener('DOMContentLoaded', function() {-->
+<!--                    // Get the text elements and content element-->
+<!--                    const showText = document.getElementById('showText_{{item.id}}');-->
+<!--                    const hideText = document.getElementById('hideText_{{item.id}}');-->
+<!--                    const content = document.getElementById('content_{{item.id}}');-->
+
+<!--                    // Show text click event-->
+<!--                    showText.addEventListener('click', function() {-->
+<!--                        content.style.display = "block";  // Show content-->
+<!--                        showText.style.display = "none";   // Hide show text-->
+<!--                        hideText.style.display = "inline";  // Show hide text-->
+<!--                    });-->
+
+<!--                    // Hide text click event-->
+<!--                    hideText.addEventListener('click', function() {-->
+<!--                        content.style.display = "none"; // Hide content-->
+<!--                        hideText.style.display = "none"; // Hide hide text-->
+<!--                        showText.style.display = "inline"; // Show show text-->
+<!--                    });-->
+<!--                });-->
+<!--            </script>-->
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     // Get the text elements and content element
@@ -40,22 +62,39 @@
                     const hideText = document.getElementById('hideText_{{item.id}}');
                     const content = document.getElementById('content_{{item.id}}');
 
-                    // Show text click event
-                    showText.addEventListener('click', function() {
-                        content.style.display = "block";  // Show content
-                        showText.style.display = "none";   // Hide show text
-                        hideText.style.display = "inline";  // Show hide text
-                    });
+                    // Ensure the elements exist before adding event listeners
+                    if (showText && hideText && content) {
+                        // Function to show content
+                        function showContent() {
+                            content.style.display = "block";  // Show content
+                            showText.style.display = "none";   // Hide show text button
+                            hideText.style.display = "inline";  // Show hide text button
+                        }
 
-                    // Hide text click event
-                    hideText.addEventListener('click', function() {
-                        content.style.display = "none"; // Hide content
-                        hideText.style.display = "none"; // Hide hide text
-                        showText.style.display = "inline"; // Show show text
-                    });
+                        // Function to hide content
+                        function hideContent() {
+                            content.style.display = "none"; // Hide content
+                            hideText.style.display = "none"; // Hide hide text button
+                            showText.style.display = "inline"; // Show show text button
+                        }
+
+                        // Add event listeners for both click and touchstart events
+                        showText.addEventListener('click', showContent);
+                        showText.addEventListener('touchstart', (e) => {
+                            e.preventDefault(); // Prevent duplicate click event on mobile
+                            showContent();
+                        });
+
+                        hideText.addEventListener('click', hideContent);
+                        hideText.addEventListener('touchstart', (e) => {
+                            e.preventDefault(); // Prevent duplicate click event on mobile
+                            hideContent();
+                        });
+                    } else {
+                        console.error("One or more elements are missing in the DOM.");
+                    }
                 });
             </script>
-
 
         </div>
     </div>
