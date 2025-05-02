@@ -94,6 +94,7 @@
 <div class="card w-100 d-md-none border-top-0 border-right-0 border-left-0 rounded-0">
     {% if item.cover %}
     <img data-src="{{ item.cover | relative_url }}" alt="{{ item.title }}" class="lazy card-img-top w-100"
+         style="max-height: 160px; object-fit: contain;"
          src="{{ '/assets/images/empty_300x200.png' | relative_url }}">
     {% else %}
     <svg class="bubble-visual-hash lazy w-100 rounded-sm" data-bubble-visual-hash="{{ item.id }}"
