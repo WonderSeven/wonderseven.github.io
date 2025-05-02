@@ -1,38 +1,60 @@
-{% assign item = include.item %}
-<div class="d-none d-md-block">
-    <div class="row no-gutters border-bottom border-gray">
-        <div class="col-md-3 col-xl-2 mb-md-0 p-md-3">
-            {%- if item.cover -%}
-            <img data-src="{{ item.cover | relative_url }}" alt="{{ item.title }}" class="lazy w-100 rounded-sm" src="{{ '/assets/images/empty_300x200.png' | relative_url }}">
-            {%- else -%}
-            <svg class="bubble-visual-hash lazy w-100 rounded-sm" data-bubble-visual-hash="{{ item.id }}" viewBox="0 0 300 200"></svg>
-            {%- endif -%}
-        </div>
-        <div class="col-md-9 col-xl-10 p-3 pl-md-0">
-            <h5 class="mt-0 mb-1 font-weight-normal">{{ item.date }} {{ item.title }}</h5>
-            <p class="mt-0 mb-0 small">{% include widgets/author_list.html authors=item.authors %}</p>
-            <p class="mt-0 mb-0 small"><span class="badge badge-pill badge-publication badge-success">{{ item.class }}</span></p>
-            <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }}</p>
+<!--{% assign item = include.item %}-->
+<!--<div class="d-none d-md-block">-->
+<!--    <div class="row no-gutters border-bottom border-gray">-->
+<!--        <div class="col-md-3 col-xl-2 mb-md-0 p-md-3">-->
+<!--            {%- if item.cover -%}-->
+<!--            <img data-src="{{ item.cover | relative_url }}" alt="{{ item.title }}" class="lazy w-100 rounded-sm" src="{{ '/assets/images/empty_300x200.png' | relative_url }}">-->
+<!--            {%- else -%}-->
+<!--            <svg class="bubble-visual-hash lazy w-100 rounded-sm" data-bubble-visual-hash="{{ item.id }}" viewBox="0 0 300 200"></svg>-->
+<!--            {%- endif -%}-->
+<!--        </div>-->
+<!--        <div class="col-md-9 col-xl-10 p-3 pl-md-0">-->
+<!--            <h5 class="mt-0 mb-1 font-weight-normal">{{ item.date }} {{ item.title }}</h5>-->
+<!--            <p class="mt-0 mb-0 small">{% include widgets/author_list.html authors=item.authors %}</p>-->
+<!--            <p class="mt-0 mb-0 small"><span class="badge badge-pill badge-publication badge-success">{{ item.class }}</span></p>-->
+<!--            <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }}</p>-->
 
-            <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
-                {% for link in item.links %}
-                {% if link[1].url %}
-                <a target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}">[{{ link[0] }}]</a>
-                {% else %}
-                <a target="_blank" href="{{ link[1] }}">[{{ link[0] }}]</a>
-                {% endif %}
-                {% endfor %}
-            </p>
+<!--            <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">-->
+<!--                {% for link in item.links %}-->
+<!--                {% if link[1].url %}-->
+<!--                <a target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}">[{{ link[0] }}]</a>-->
+<!--                {% else %}-->
+<!--                <a target="_blank" href="{{ link[1] }}">[{{ link[0] }}]</a>-->
+<!--                {% endif %}-->
+<!--                {% endfor %}-->
+<!--            </p>-->
 
-            <span id="showText_{{item.id}}" class="toggle-text">阅读全文</span>
-            <span id="hideText_{{item.id}}" class="toggle-text" style="display: none;">隐藏全文</span>
+<!--            <span id="showText_{{item.id}}" class="toggle-text">阅读全文</span>-->
+<!--            <span id="hideText_{{item.id}}" class="toggle-text" style="display: none;">隐藏全文</span>-->
 
-            <div id="content_{{item.id}}" class="hidden content">
-                <div class="{% if item.class != null %}{{ item.class }}{% else %}card border-0 shadow-sm bg-white{% endif %}">
-                    {{ item.content }}
-                </div>
-            </div>
+<!--            <div id="content_{{item.id}}" class="hidden content">-->
+<!--                <div class="{% if item.class != null %}{{ item.class }}{% else %}card border-0 shadow-sm bg-white{% endif %}">-->
+<!--                    {{ item.content }}-->
+<!--                </div>-->
+<!--            </div>-->
 
+<!--&lt;!&ndash;            <script>&ndash;&gt;-->
+<!--&lt;!&ndash;                document.addEventListener('DOMContentLoaded', function() {&ndash;&gt;-->
+<!--&lt;!&ndash;                    // Get the text elements and content element&ndash;&gt;-->
+<!--&lt;!&ndash;                    const showText = document.getElementById('showText_{{item.id}}');&ndash;&gt;-->
+<!--&lt;!&ndash;                    const hideText = document.getElementById('hideText_{{item.id}}');&ndash;&gt;-->
+<!--&lt;!&ndash;                    const content = document.getElementById('content_{{item.id}}');&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    // Show text click event&ndash;&gt;-->
+<!--&lt;!&ndash;                    showText.addEventListener('click', function() {&ndash;&gt;-->
+<!--&lt;!&ndash;                        content.style.display = "block";  // Show content&ndash;&gt;-->
+<!--&lt;!&ndash;                        showText.style.display = "none";   // Hide show text&ndash;&gt;-->
+<!--&lt;!&ndash;                        hideText.style.display = "inline";  // Show hide text&ndash;&gt;-->
+<!--&lt;!&ndash;                    });&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    // Hide text click event&ndash;&gt;-->
+<!--&lt;!&ndash;                    hideText.addEventListener('click', function() {&ndash;&gt;-->
+<!--&lt;!&ndash;                        content.style.display = "none"; // Hide content&ndash;&gt;-->
+<!--&lt;!&ndash;                        hideText.style.display = "none"; // Hide hide text&ndash;&gt;-->
+<!--&lt;!&ndash;                        showText.style.display = "inline"; // Show show text&ndash;&gt;-->
+<!--&lt;!&ndash;                    });&ndash;&gt;-->
+<!--&lt;!&ndash;                });&ndash;&gt;-->
+<!--&lt;!&ndash;            </script>&ndash;&gt;-->
 <!--            <script>-->
 <!--                document.addEventListener('DOMContentLoaded', function() {-->
 <!--                    // Get the text elements and content element-->
@@ -40,79 +62,120 @@
 <!--                    const hideText = document.getElementById('hideText_{{item.id}}');-->
 <!--                    const content = document.getElementById('content_{{item.id}}');-->
 
-<!--                    // Show text click event-->
-<!--                    showText.addEventListener('click', function() {-->
-<!--                        content.style.display = "block";  // Show content-->
-<!--                        showText.style.display = "none";   // Hide show text-->
-<!--                        hideText.style.display = "inline";  // Show hide text-->
-<!--                    });-->
+<!--                    // Ensure the elements exist before adding event listeners-->
+<!--                    if (showText && hideText && content) {-->
+<!--                        // Function to show content-->
+<!--                        function showContent() {-->
+<!--                            content.style.display = "block";  // Show content-->
+<!--                            showText.style.display = "none";   // Hide show text button-->
+<!--                            hideText.style.display = "inline";  // Show hide text button-->
+<!--                        }-->
 
-<!--                    // Hide text click event-->
-<!--                    hideText.addEventListener('click', function() {-->
-<!--                        content.style.display = "none"; // Hide content-->
-<!--                        hideText.style.display = "none"; // Hide hide text-->
-<!--                        showText.style.display = "inline"; // Show show text-->
-<!--                    });-->
+<!--                        // Function to hide content-->
+<!--                        function hideContent() {-->
+<!--                            content.style.display = "none"; // Hide content-->
+<!--                            hideText.style.display = "none"; // Hide hide text button-->
+<!--                            showText.style.display = "inline"; // Show show text button-->
+<!--                        }-->
+
+<!--                        // Add event listeners for both click and touchstart events-->
+<!--                        showText.addEventListener('click', showContent);-->
+<!--                        showText.addEventListener('touchstart', (e) => {-->
+<!--                            e.preventDefault(); // Prevent duplicate click event on mobile-->
+<!--                            showContent();-->
+<!--                        });-->
+
+<!--                        hideText.addEventListener('click', hideContent);-->
+<!--                        hideText.addEventListener('touchstart', (e) => {-->
+<!--                            e.preventDefault(); // Prevent duplicate click event on mobile-->
+<!--                            hideContent();-->
+<!--                        });-->
+<!--                    } else {-->
+<!--                        console.error("One or more elements are missing in the DOM.");-->
+<!--                    }-->
 <!--                });-->
 <!--            </script>-->
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    // Get the text elements and content element
-                    const showText = document.getElementById('showText_{{item.id}}');
-                    const hideText = document.getElementById('hideText_{{item.id}}');
-                    const content = document.getElementById('content_{{item.id}}');
 
-                    // Ensure the elements exist before adding event listeners
-                    if (showText && hideText && content) {
-                        // Function to show content
-                        function showContent() {
-                            content.style.display = "block";  // Show content
-                            showText.style.display = "none";   // Hide show text button
-                            hideText.style.display = "inline";  // Show hide text button
-                        }
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
-                        // Function to hide content
-                        function hideContent() {
-                            content.style.display = "none"; // Hide content
-                            hideText.style.display = "none"; // Hide hide text button
-                            showText.style.display = "inline"; // Show show text button
-                        }
+<!--<div class="card w-100 d-md-none border-top-0 border-right-0 border-left-0 rounded-0" style="overflow-y: scroll;">-->
+<!--    {%- if item.cover -%}-->
+<!--    <img data-src="{{ item.cover | relative_url }}" alt="{{ item.title }}" class="lazy card-img w-100" src="{{ '/assets/images/empty_300x200.png' | relative_url }}">-->
+<!--    {%- else -%}-->
+<!--    <svg class="bubble-visual-hash lazy w-100 rounded-sm" data-bubble-visual-hash="{{ item.id }}" viewBox="0 0 300 200"></svg>-->
+<!--    {%- endif -%}-->
+<!--    <div class="card-img-overlay d-flex align-items-start flex-column" style="background-color: rgba(255, 255, 255, 0.85);">-->
+<!--        <div class="mb-auto"></div>-->
+<!--        <div>-->
+<!--            <h5 class="mt-0 mb-1 font-weight-normal">{{ item.title }}</h5>-->
+<!--            <p class="mt-0 mb-0 small">{% include widgets/author_list.html authors=item.authors %}</p>-->
+<!--            <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }}</p>-->
+<!--            &lt;!&ndash;            <p class="mt-0 mb-0 small text-muted d-none d-sm-block">{{ item.abstract }}</p>&ndash;&gt;-->
 
-                        // Add event listeners for both click and touchstart events
-                        showText.addEventListener('click', showContent);
-                        showText.addEventListener('touchstart', (e) => {
-                            e.preventDefault(); // Prevent duplicate click event on mobile
-                            showContent();
-                        });
+<!--            <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">-->
+<!--                {% for link in item.links %}-->
+<!--                {% if link[1].url %}-->
+<!--                <a target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}">[{{ link[0] }}]</a>-->
+<!--                {% else %}-->
+<!--                <a target="_blank" href="{{ link[1] }}">[{{ link[0] }}]</a>-->
+<!--                {% endif %}-->
+<!--                {% endfor %}-->
+<!--            </p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
-                        hideText.addEventListener('click', hideContent);
-                        hideText.addEventListener('touchstart', (e) => {
-                            e.preventDefault(); // Prevent duplicate click event on mobile
-                            hideContent();
-                        });
-                    } else {
-                        console.error("One or more elements are missing in the DOM.");
-                    }
-                });
-            </script>
 
+<!--<style>-->
+<!--    /* Ensure this is included */-->
+<!--    .hidden {-->
+<!--        display: none; /* Hide the content by default */-->
+<!--    }-->
+<!--    .content {-->
+<!--        margin-top: 20px;-->
+<!--        padding: 10px;-->
+<!--        border: 1px solid #ccc;-->
+<!--        border-radius: 5px;-->
+<!--        background-color: #f9f9f9;-->
+<!--    }-->
+<!--    .toggle-text {-->
+<!--        color: #0C67FF;-->
+<!--        cursor: pointer; /* Pointer cursor for clickable text */-->
+<!--        text-decoration: underline; /* Underline for emphasis */-->
+<!--        margin-right: 5px; /* Space between texts */-->
+<!--    }-->
+<!--</style>-->
+
+
+
+
+
+{% assign item = include.item %}
+
+<!-- 桌面端显示 -->
+<div class="d-none d-md-block">
+    <div class="row no-gutters border-bottom border-gray">
+        <div class="col-md-3 col-xl-2 mb-md-0 p-md-3">
+            {% if item.cover %}
+            <img data-src="{{ item.cover | relative_url }}" alt="{{ item.title }}"
+                 class="lazy w-100 rounded-sm small-cover-img"
+                 src="{{ '/assets/images/empty_300x200.png' | relative_url }}">
+            {% else %}
+            <svg class="bubble-visual-hash lazy w-100 rounded-sm small-cover-img"
+                 data-bubble-visual-hash="{{ item.id }}" viewBox="0 0 300 200"></svg>
+            {% endif %}
         </div>
-    </div>
-</div>
-
-<div class="card w-100 d-md-none border-top-0 border-right-0 border-left-0 rounded-0" style="overflow-y: scroll;">
-    {%- if item.cover -%}
-    <img data-src="{{ item.cover | relative_url }}" alt="{{ item.title }}" class="lazy card-img w-100" src="{{ '/assets/images/empty_300x200.png' | relative_url }}">
-    {%- else -%}
-    <svg class="bubble-visual-hash lazy w-100 rounded-sm" data-bubble-visual-hash="{{ item.id }}" viewBox="0 0 300 200"></svg>
-    {%- endif -%}
-    <div class="card-img-overlay d-flex align-items-start flex-column" style="background-color: rgba(255, 255, 255, 0.85);">
-        <div class="mb-auto"></div>
-        <div>
-            <h5 class="mt-0 mb-1 font-weight-normal">{{ item.title }}</h5>
+        <div class="col-md-9 col-xl-10 p-3 pl-md-0">
+            <h5 class="mt-0 mb-1 font-weight-normal">{{ item.date }} {{ item.title }}</h5>
             <p class="mt-0 mb-0 small">{% include widgets/author_list.html authors=item.authors %}</p>
-            <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }}</p>
-            <!--            <p class="mt-0 mb-0 small text-muted d-none d-sm-block">{{ item.abstract }}</p>-->
+            <p class="mt-0 mb-0 small">
+                <span class="badge badge-pill badge-publication badge-success">{{ item.class }}</span>
+            </p>
+            <p class="mt-0 mb-0 small">
+                {{ item.pub_pre }}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }}
+            </p>
 
             <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
                 {% for link in item.links %}
@@ -123,18 +186,72 @@
                 {% endif %}
                 {% endfor %}
             </p>
+
+            <!-- 切换按钮 -->
+            <span id="showText_{{ item.id }}" class="toggle-text">阅读全文</span>
+            <span id="hideText_{{ item.id }}" class="toggle-text" style="display: none;">隐藏全文</span>
+
+            <!-- 内容区域 -->
+            <div id="content_{{ item.id }}" class="hidden content">
+                <div class="{% if item.class != null %}{{ item.class }}{% else %}card border-0 shadow-sm bg-white{% endif %}">
+                    {{ item.content }}
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
+<!-- 移动端显示 -->
+<div class="card w-100 d-md-none border-top-0 border-right-0 border-left-0 rounded-0 mt-3">
+    {% if item.cover %}
+    <img data-src="{{ item.cover | relative_url }}" alt="{{ item.title }}"
+         class="lazy card-img-top w-100 small-cover-img"
+         src="{{ '/assets/images/empty_300x200.png' | relative_url }}">
+    {% else %}
+    <svg class="bubble-visual-hash lazy w-100 rounded-sm small-cover-img"
+         data-bubble-visual-hash="{{ item.id }}" viewBox="0 0 300 200"></svg>
+    {% endif %}
 
+    <div class="card-body px-3 py-2">
+        <h5 class="mt-0 mb-1 font-weight-normal">{{ item.date }} {{ item.title }}</h5>
+        <p class="mt-0 mb-0 small">{% include widgets/author_list.html authors=item.authors %}</p>
+        <p class="mt-0 mb-0 small">
+            <span class="badge badge-pill badge-publication badge-success">{{ item.class }}</span>
+        </p>
+        <p class="mt-0 mb-0 small">
+            {{ item.pub_pre }}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }}
+        </p>
+
+        <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
+            {% for link in item.links %}
+            {% if link[1].url %}
+            <a target="{{ link[1]['target'] }}" href="{{ link[1]['url'] }}">[{{ link[0] }}]</a>
+            {% else %}
+            <a target="_blank" href="{{ link[1] }}">[{{ link[0] }}]</a>
+            {% endif %}
+            {% endfor %}
+        </p>
+
+        <!-- 切换按钮 -->
+        <span id="showText_{{ item.id }}_m" class="toggle-text">阅读全文</span>
+        <span id="hideText_{{ item.id }}_m" class="toggle-text" style="display: none;">隐藏全文</span>
+
+        <!-- 内容区域 -->
+        <div id="content_{{ item.id }}_m" class="hidden content">
+            <div class="{% if item.class != null %}{{ item.class }}{% else %}card border-0 shadow-sm bg-white{% endif %}">
+                {{ item.content }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 样式 -->
 <style>
-    /* Ensure this is included */
     .hidden {
-        display: none; /* Hide the content by default */
+        display: none;
     }
     .content {
-        margin-top: 20px;
+        margin-top: 15px;
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
@@ -142,8 +259,62 @@
     }
     .toggle-text {
         color: #0C67FF;
-        cursor: pointer; /* Pointer cursor for clickable text */
-        text-decoration: underline; /* Underline for emphasis */
-        margin-right: 5px; /* Space between texts */
+        cursor: pointer;
+        text-decoration: underline;
+        margin-top: 0.5rem;
+        display: inline-block;
+    }
+    .small-cover-img {
+        max-height: 120px;
+        object-fit: contain;
+    }
+
+    @media (max-width: 768px) {
+        .small-cover-img {
+            max-height: 160px;
+        }
     }
 </style>
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const id = '{{ item.id }}';
+
+        // 桌面端元素
+        const showText = document.getElementById('showText_' + id);
+        const hideText = document.getElementById('hideText_' + id);
+        const content = document.getElementById('content_' + id);
+
+        // 移动端元素
+        const showTextM = document.getElementById('showText_' + id + '_m');
+        const hideTextM = document.getElementById('hideText_' + id + '_m');
+        const contentM = document.getElementById('content_' + id + '_m');
+
+        if (showText && hideText && content) {
+            showText.addEventListener('click', () => {
+                content.style.display = 'block';
+                showText.style.display = 'none';
+                hideText.style.display = 'inline';
+            });
+            hideText.addEventListener('click', () => {
+                content.style.display = 'none';
+                showText.style.display = 'inline';
+                hideText.style.display = 'none';
+            });
+        }
+
+        if (showTextM && hideTextM && contentM) {
+            showTextM.addEventListener('click', () => {
+                contentM.style.display = 'block';
+                showTextM.style.display = 'none';
+                hideTextM.style.display = 'inline';
+            });
+            hideTextM.addEventListener('click', () => {
+                contentM.style.display = 'none';
+                showTextM.style.display = 'inline';
+                hideTextM.style.display = 'none';
+            });
+        }
+    });
+</script>
