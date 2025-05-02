@@ -281,66 +281,61 @@
     document.addEventListener('DOMContentLoaded', function () {
         const id = '{{ item.id }}';
 
-        // 获取所有必要元素
-        const elements = {
-            desktop: {
-                show: document.getElementById('showText_' + id),
-                hide: document.getElementById('hideText_' + id),
-                content: document.getElementById('content_' + id)
-            },
-            mobile: {
-                show: document.getElementById('showText_' + id + '_m'),
-                hide: document.getElementById('hideText_' + id + '_m'),
-                content: document.getElementById('content_' + id + '_m')
-            }
-        };
+        // 桌面端元素
+        const showText = document.getElementById('showText_' + id);
+        const hideText = document.getElementById('hideText_' + id);
+        const content = document.getElementById('content_' + id);
 
-        // 关闭除当前以外所有文章内容
+        // 移动端元素
+        const showTextM = document.getElementById('showText_' + id + '_m');
+        const hideTextM = document.getElementById('hideText_' + id + '_m');
+        const contentM = document.getElementById('content_' + id + '_m');
+
+        // 自动关闭其他文章内容
         function hideAllExcept(currentId) {
             const allContents = document.querySelectorAll('.content');
-            const allShowButtons = document.querySelectorAll('.toggle-text[id^="showText_"]');
-            const allHideButtons = document.querySelectorAll('.toggle-text[id^="hideText_"]');
+            const allShowBtns = document.querySelectorAll('.toggle-text[id^="showText_"]');
+            const allHideBtns = document.querySelectorAll('.toggle-text[id^="hideText_"]');
 
             allContents.forEach(el => {
-                if (!el.id.includes(currentId)) {
-                    el.style.display = 'none';
-                }
+                if (!el.id.includes(currentId)) el.style.display = 'none';
             });
-
-            allShowButtons.forEach(el => {
-                if (!el.id.includes(currentId)) {
-                    el.style.display = 'inline';
-                }
+            allShowBtns.forEach(el => {
+                if (!el.id.includes(currentId)) el.style.display = 'inline';
             });
-
-            allHideButtons.forEach(el => {
-                if (!el.id.includes(currentId)) {
-                    el.style.display = 'none';
-                }
+            allHideBtns.forEach(el => {
+                if (!el.id.includes(currentId)) el.style.display = 'none';
             });
         }
 
-        // 绑定函数
-        function bindToggle(elSet, suffix = '') {
-            const currentId = id + suffix;
-            if (elSet.show && elSet.hide && elSet.content) {
-                elSet.show.addEventListener('click', () => {
-                    hideAllExcept(currentId);
-                    elSet.content.style.display = 'block';
-                    elSet.show.style.display = 'none';
-                    elSet.hide.style.display = 'inline';
-                });
-
-                elSet.hide.addEventListener('click', () => {
-                    elSet.content.style.display = 'none';
-                    elSet.show.style.display = 'inline';
-                    elSet.hide.style.display = 'none';
-                });
-            }
+        // 桌面端事件绑定
+        if (showText && hideText && content) {
+            showText.addEventListener('click', () => {
+                hideAllExcept(id);
+                content.style.display = 'block';
+                showText.style.display = 'none';
+                hideText.style.display = 'inline';
+            });
+            hideText.addEventListener('click', () => {
+                content.style.display = 'none';
+                showText.style.display = 'inline';
+                hideText.style.display = 'none';
+            });
         }
 
-        // 绑定桌面和移动端
-        bindToggle(elements.desktop);
-        bindToggle(elements.mobile, '_m');
+        // 移动端事件绑定
+        if (showTextM && hideTextM && contentM) {
+            showTextM.addEventListener('click', () => {
+                hideAllExcept(id + '_m');
+                contentM.style.display = 'block';
+                showTextM.style.display = 'none';
+                hideTextM.style.display = 'inline';
+            });
+            hideTextM.addEventListener('click', () => {
+                contentM.style.display = 'none';
+                showTextM.style.display = 'inline';
+                hideTextM.style.display = 'none';
+            });
+        }
     });
 </script>
