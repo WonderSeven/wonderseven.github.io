@@ -23,7 +23,7 @@ authors:
   - Haoliang Li
 
 links:
-  Paper: https://www.arxiv.org/pdf/2503.04131
-#  Code: https://tonyckc.github.io/TTA-IC-DR/
+  Paper: https://openaccess.thecvf.com/content/CVPR2025/papers/Liu_Q-PART_Quasi-Periodic_Adaptive_Regression_with_Test-time_Training_for_Pediatric_Left_CVPR_2025_paper.pdf
+  Code: https://github.com/ljwztc/Q-PART
 #  Unsplash: https://unsplash.com/photos/sliced-in-half-pineapple--_PLJZmHZzk
 ---
