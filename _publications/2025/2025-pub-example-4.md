@@ -6,7 +6,7 @@ pub:            "IEEE Transactions on Pattern Analysis and Machine Intelligence 
 pub_date:       "2025"
 abstract: >-
   Cover image is a photo by Thomas Renaud on Unsplash. The abstract of the publication is meant to be a TLDR (very brief summary with 1~2 sentences) of your paper.
-cover:          /assets/images/covers/2023_FNSDA.jpg
+cover:          /assets/images/covers/2025_FNSDA.png
 #cover:          /assets/images/videos/FNSDA_ns.gif
 
 authors:
