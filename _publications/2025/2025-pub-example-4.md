@@ -14,6 +14,6 @@ authors:
   - Hong Yan
   - Haoliang Li
 links:
-  Paper: https://openreview.net/forum?id=SXj1qjFEpQ
+  Paper: https://ieeexplore.ieee.org/document/11045837
   Code: https://github.com/WonderSeven/FNSDA
 ---
