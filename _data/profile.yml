@@ -41,12 +41,16 @@ education:
   date: Sep. 2021 - present
 - name: Nanjing University
   logo: /assets/images/badges/NJU.png
-  position: M.S. in Computer Science
+  position: >- 
+    M.S. in Computer Science <br/>
+    Outstanding Postgraduate
   date: Sep. 2018 - Jul. 2021
 
 - name: China University of Mining and Technology
   logo: /assets/images/badges/CUMT.png
-  position: B.S. in Computer Science
+  position: >-
+    B.S. in Computer Science <br/>
+    Outstanding Undergraduate
   date: Sep. 2014 - Jul. 2018
 
 # experience:
@@ -58,7 +62,12 @@ education:
 awards:
 - name: Research Tuition Scholarship
   date: 2024
-- name: Outstanding Undergraduate
-  date: 2018
 - name: China National Scholarship
   date: 2016
+
+
+service:
+  - name: Conference reviewer
+    data: ICML, ICLR, NeuraIPS, CVPR, ICCV, WACV, AAAI
+  - name: Journal reviewer
+    data: TCSVT

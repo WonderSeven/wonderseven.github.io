@@ -1,6 +1,7 @@
 homepage:
   show_experience: true
   show_news: true
+  show_service: true
   show_selected_publications: true
   num_news: 20
 
