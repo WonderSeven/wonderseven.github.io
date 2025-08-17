@@ -53,11 +53,11 @@ education:
     Outstanding Undergraduate
   date: Sep. 2014 - Jul. 2018
 
-# experience:
-# - name: Peking University
-#   logo: /assets/images/badges/PKU_red.png
-#   position: Research Intern
-#   date: Sep. 2019 - Jul. 2021
+#experience:
+#- name: Peking University
+#  logo: /assets/images/badges/PKU_red.png
+#  position: Research Intern
+#  date: Sep. 2019 - Jul. 2021
 
 awards:
 - name: Research Tuition Scholarship
@@ -68,6 +68,6 @@ awards:
 
 service:
   - name: Conference reviewer
-    data: ICML, ICLR, NeuraIPS, CVPR, ICCV, WACV, AAAI
+    data: ICML, ICLR, NeurIPS, CVPR, ICCV, WACV, AAAI
   - name: Journal reviewer
     data: TCSVT
