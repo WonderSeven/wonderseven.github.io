@@ -17,4 +17,5 @@ authors:
   - Haoliang Li
 links:
   Paper: https://arxiv.org/pdf/2302.11354
+  Code: https://github.com/WonderSeven/graph-neural-cdes
 ---
