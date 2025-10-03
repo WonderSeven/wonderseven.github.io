@@ -68,6 +68,6 @@ awards:
 
 service:
   - name: Conference reviewer
-    data: ICML, ICLR, NeurIPS, CVPR, ICCV, WACV, AAAI
+    data: ICML, ICLR, NeurIPS, CVPR, ICCV, WACV, AAAI, AISTATS
   - name: Journal reviewer
     data: TCSVT
