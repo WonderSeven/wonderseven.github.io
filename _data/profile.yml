@@ -4,7 +4,7 @@ navbar_name: "Tiexin"
 
 positions:
 - logo: /assets/images/badges/CityU.png  # Logo is optional
-  name: PhD
+  name: Postdoc
 #- name: Position 2 without logo
 
 
@@ -21,12 +21,15 @@ github: WonderSeven
 
 short_bio_text_justify: false
 short_bio: >-
-  <p>
-  I am a final-year PhD student at City University of Hong Kong, fortunately supervised by Prof. <a href="https://hlli1991.github.io/" target="_blank">Haoliang Li</a>.
-  Before that, I was fortunately supervised by Prof. <a href="https://cs.nju.edu.cn/shiyh/index.htm" target="_blank">Yinghuan Shi</a> at Nanjing University.
-  My current research interests encompass machine learning for complex systems and transfer learning, with a particular focus on their grounded
-  mathematical principles and practical applications.
+  <p> I am a Postdoc researcher at the Department of Electrical Engineering, City University of Hong Kong. 
+  I received my Ph.D. degree from City University of Hong Kong, supervised by Prof. <a href="https://hlli1991.github.io/" target="_blank">Haoliang Li</a>, 
+  and Master degree in Computer Science from Nanjing University, supervised by Prof. <a href="https://cs.nju.edu.cn/shiyh/index.htm" target="_blank">Yinghuan Shi</a>. 
+  I also had a wonderful experience as a visiting scholar at the University of Oxford, working with Prof. <a href="https://www.maths.ox.ac.uk/people/terry.lyons" target="_blank">Terry Lyons</a>. 
   </p>
+  
+  <p>My current research interests encompass machine learning for complex systems and transfer learning, with a particular focus on their grounded
+  mathematical principles and practical applications.</p>
+  
 
 portrait_url: /assets/images/photos/portrait.png
 #portrait_caption: >-
@@ -38,7 +41,7 @@ education:
   position: >-
     Department of Electrical Engineering <br/>
     Ph.D. Student
-  date: Sep. 2021 - present
+  date: Sep. 2021 - Oct. 2025
 - name: Nanjing University
   logo: /assets/images/badges/NJU.png
   position: >- 
