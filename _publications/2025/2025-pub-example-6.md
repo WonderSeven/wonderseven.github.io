@@ -15,6 +15,7 @@ authors:
   - Tiexin Qin
   - Jan Stühmer
   - Andrey Kormilitzin
+
 links:
   Paper: https://arxiv.org/pdf/2506.20324
   Code: https://github.com/hits-mli/perm-equiv-graph-neural-cdes
