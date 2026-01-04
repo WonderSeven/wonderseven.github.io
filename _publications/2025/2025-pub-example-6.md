@@ -17,5 +17,5 @@ authors:
   - Andrey Kormilitzin
 links:
   Paper: https://arxiv.org/pdf/2506.20324
-  Code: https://anonymous.4open.science/r/perm_equiv_gn_cdes-BBF8/README.md
+  Code: https://github.com/hits-mli/perm-equiv-graph-neural-cdes
 ---
