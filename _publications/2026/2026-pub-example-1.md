@@ -13,6 +13,6 @@ authors:
   - Renjie Wan
   - Haoliang Li
 links:
-#  Paper: https://arxiv.org/pdf/1910.08343v1
+  Paper: https://ieeexplore.ieee.org/abstract/document/11408938
 #  Demo: https://github.com/WonderSeven/DeepAugNet/
 ---
