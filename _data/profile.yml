@@ -73,4 +73,4 @@ service:
   - name: Conference reviewer
     data: ICML, ICLR, NeurIPS, AISTATS, AAAI, KDD, CVPR, ICCV, WACV
   - name: Journal reviewer
-    data: TPAMI, TCSVT, TIT
+    data: TPAMI, TCSVT, TIT, TMLR
