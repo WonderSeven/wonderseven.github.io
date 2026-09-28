@@ -70,7 +70,9 @@ awards:
 
 
 service:
+  - name: Area chair
+    data: ICLR
   - name: Conference reviewer
-    data: ICML, ICLR, NeurIPS, AISTATS, AAAI, KDD, CVPR, ICCV, WACV
+    data: ICML, NeurIPS, AISTATS, AAAI, KDD, CVPR, ICCV, WACV
   - name: Journal reviewer
     data: TPAMI, TCSVT, TIT, TMLR
