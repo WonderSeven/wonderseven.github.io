@@ -3,8 +3,9 @@ body {
     /*font-family: "Lato", sans-serif;*/
     /*font-family: "Roboto", sans-serif;*/
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-    font-weight: 400;
+    font-weight: 380;
     padding-top: 5.0rem;
+    line-height: 1.45;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -13,12 +14,12 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .text-profile-position {
-    font-weight: 400;
+    font-weight: 380;
 }
 
 .text-profile-bio {
     /* font-family: "Raleway"; */
-    font-weight: 400;
+    font-weight: 380;
 }
 
 .navbar {
